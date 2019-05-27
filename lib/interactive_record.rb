@@ -63,7 +63,13 @@ class InteractiveRecord
   end
   
   def self.find_by(attribute)
+    sql = <<-SQL
+      SELECT * 
+      FROM #{self.values_for_insert}
+      WHERE * = ?
+    SQL
     
+    DB[:conn].execute(sql, attribute)
   end 
   
 end

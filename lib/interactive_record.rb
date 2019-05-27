@@ -42,7 +42,7 @@ class InteractiveRecord
   end 
   
   def save 
-    sql = INSERT INTO 
+    sql = "INSERT INTO #{
   end 
   
   def self.find_by_name 
